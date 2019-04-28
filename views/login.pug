@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    .main.container
+        .row
+            .col-md-6.col-md-offset-3
+                h3.display-6.m-b-3 Login
+                form(method = "POST", action='/users/login')
+                    #form-group
+                        label Username:
+                        input.form-control(name='username', type='text')
+                    br
+                    #form-group
+                        label Password:
+                        input.form-control(name='password', type='password')
+                    br
+                    input.btn.btn-primary(type='submit',value='Submit')
+
+
+
+

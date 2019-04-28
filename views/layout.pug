@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title registration
+    link(rel='stylesheet', href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    link(rel='stylesheet', href="../public/stylesheets/style.css")
+  body
+    if user
+      li
+      a(href="/users/logout") Logout
+    else
+      a(class='button' href='/users/register') Register
+      br
+      a(class='button' href='/users/login') Login
+    != messages("message.ejs", locals)
+    if errors
+      each error, i in errors
+        div(class="alert alert-danger") #{error.msg}
+    block content
